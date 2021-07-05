@@ -37,18 +37,19 @@ const Carousel = ({ slides, teaser }) => {
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">
             {slides.map((item, index) => (
-              <ConditionalWrap
-                condition={!!teaser}
-                key={index}
-                wrap={children => (
-                  <Link href={`/${item.slug.current}`}>
-                    <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group block">
-                      {children}
-                    </a>
-                  </Link>
-                )}
-              >
-                <div className="embla__slide">
+              <div className="embla__slide">
+                <ConditionalWrap
+                  condition={!!teaser}
+                  key={index}
+                  wrap={children => (
+                    <Link href={`/${item.slug.current}`}>
+                      <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group block">
+                        {children}
+                      </a>
+                    </Link>
+                  )}
+                >
+                
                     <motion.div variants={slideIn} className="embla__slide__inner mb-2">
                       <div className="embla__slide__img bg-gray-100">
                         <div className="group-hover:scale-110 transition ease-in-out duration-500">
@@ -75,8 +76,8 @@ const Carousel = ({ slides, teaser }) => {
                         <span className="text-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
                       </motion.div>
                     )}
-                  </div>
               </ConditionalWrap>
+              </div>
             ))}
           </div>
         </div>
