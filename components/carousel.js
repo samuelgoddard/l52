@@ -24,8 +24,9 @@ const Carousel = ({ slides, teaser }) => {
           {slides.map((item, index) => (
             <ConditionalWrap
               condition={!!teaser}
+              key={index}
               wrap={children => (
-                <Link href={`/${item.slug.current}`} key={index}>
+                <Link href={`/${item.slug.current}`}>
                   <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group">
                     {children}
                   </a>

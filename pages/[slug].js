@@ -6,11 +6,8 @@ import Carousel from '@/components/carousel'
 import { fade } from "@/helpers/transitions"
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import SanityPageService from '../services/SanityPageService'
+import SanityPageService from '@/services/SanityPageService'
 import SmoothScroll from '@/components/smooth-scroll'
-
-const SLIDE_COUNT = 10;
-const slides = Array.from(Array(SLIDE_COUNT).keys());
 
 const query = `*[_type == "client" && slug.current == $slug][0]{
 	title,
