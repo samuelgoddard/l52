@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import HomeCarousel from '@/components/homeCarousel'
+import Carousel from '@/components/carousel'
 import { fade } from "@/helpers/transitions"
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import SanityPageService from '@/services/sanityPageService'
@@ -46,7 +46,7 @@ export default function Home(initialData) {
             <m.div variants={fade} className="w-full flex flex-grow">
               <div className="w-full flex flex-grow justify-center items-center">
                 <div className="w-full h-full">
-                  <HomeCarousel slides={clients} teaser />
+                  <Carousel slides={clients} teaser />
                 </div>
               </div>
             </m.div>

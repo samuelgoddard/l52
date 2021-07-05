@@ -48,8 +48,7 @@ const Carousel = ({ slides, teaser }) => {
                 )}
               >
                 <div className="embla__slide">
-                  <motion.div variants={slideIn} className="embla__slide__inner">
-                    <div className="embla__slide__inner mb-2">
+                    <motion.div variants={slideIn} className="embla__slide__inner mb-2">
                       <div className="embla__slide__img bg-gray-100">
                         <div className="group-hover:scale-110 transition ease-in-out duration-500">
                           <ImageWrapper
@@ -63,20 +62,19 @@ const Carousel = ({ slides, teaser }) => {
                           />
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                     
                     { teaser ? (
-                      <>
+                      <motion.div variants={slideIn}>
                         <span className="text-blue uppercase block mb-px">{item.title}</span>
                         <span className="text-black uppercase block text-xs opacity-75">{item.teaserSubtitle}</span>
-                      </>
+                      </motion.div>
                     ) : (
-                      <>
+                      <motion.div variants={slideIn}>
                         <span className="text-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
-                      </>
+                      </motion.div>
                     )}
-                  </motion.div>
-                </div>
+                  </div>
               </ConditionalWrap>
             ))}
           </div>
