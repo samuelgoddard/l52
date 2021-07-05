@@ -19,6 +19,7 @@
     "framer-motion": "^4.1.17",
     "groq": "^2.2.6",
     "next": "^11.0.1",
+    "next-auth": "^3.27.1",
     "next-sanity": "^0.2.0",
     "next-sanity-image": "^3.1.4",
     "next-seo": "^4.26.0",

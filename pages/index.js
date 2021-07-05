@@ -7,6 +7,7 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import SanityPageService from '@/services/sanityPageService'
 import { NextSeo } from 'next-seo'
 import Div100vh from 'react-div-100vh'
+import { signIn, signOut, useSession } from "next-auth/client";
 
 const query = `{
   "clients": *[_type == "client"]{
@@ -26,37 +27,50 @@ const query = `{
 const pageService = new SanityPageService(query)
 
 export default function Home(initialData) {
+  const [session, loading] = useSession();
   const { data: { clients }  } = pageService.getPreviewHook(initialData)()
+  
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <Layout>
       <NextSeo title="Home" />
-      
-      <LazyMotion features={domAnimation}>      
-        <Div100vh>
-          <m.div
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="flex flex-col h-full"
-          >
-            
-            <Header indexActive />
+      {!session && (
+        <>
+          Not signed in <br />
+          <button onClick={signIn}>Sign in</button>
+        </>
+      )}
 
-            <m.div variants={fade} className="w-full flex flex-grow">
-              <div className="w-full flex flex-grow justify-center items-center">
-                <div className="w-full h-full">
-                  <Carousel slides={clients} teaser />
+      {session && (
+        <LazyMotion features={domAnimation}>      
+          <Div100vh>
+            <m.div
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              className="flex flex-col h-full"
+            >
+              
+              <Header indexActive />
+
+              <m.div variants={fade} className="w-full flex flex-grow">
+                <div className="w-full flex flex-grow justify-center items-center">
+                  <div className="w-full h-full">
+                    <Carousel slides={clients} teaser />
+                  </div>
                 </div>
-              </div>
-            </m.div>
+              </m.div>
 
-            <m.div variants={fade} className="w-full">
-              <Footer />
+              <m.div variants={fade} className="w-full">
+                <Footer />
+              </m.div>
             </m.div>
-          </m.div>
-        </Div100vh>
-      </LazyMotion>
+          </Div100vh>
+        </LazyMotion>
+      )}
     </Layout>
   )
 }
