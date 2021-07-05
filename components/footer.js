@@ -13,16 +13,12 @@ export default function Footer() {
         </div>
 
         <div className="ml-auto">
-          <Link href="/">
-            <a aria-label="Navigate to about page" className="inline-block uppercase hover:opacity-75 focus:opacity-75 transition ease-in-out duration-300 text-xs md:text-sm">
-              Contact
-            </a>
-          </Link>
-          <Link href="/about">
-            <a aria-label="Navigate to about page" className="inline-block ml-3 md:ml-5 uppercase hover:opacity-75 focus:opacity-75 transition ease-in-out duration-300 text-xs md:text-sm">
-              Instagram
-            </a>
-          </Link>
+          <a href="mailto:TalkToUs@L52.world" aria-label="Navigate to about page" className="inline-block uppercase hover:opacity-75 focus:opacity-75 transition ease-in-out duration-300 text-xs md:text-sm">
+            Contact
+          </a>
+          <a href="https://www.instagram.com/l52world" aria-label="Navigate to about page" className="inline-block ml-3 md:ml-5 uppercase hover:opacity-75 focus:opacity-75 transition ease-in-out duration-300 text-xs md:text-sm">
+            Instagram
+          </a>
         </div>
       </div>
     </footer>
