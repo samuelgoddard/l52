@@ -5,6 +5,7 @@ import { useEmblaCarousel } from "embla-carousel/react";
 import Link from "next/link";
 import ConditionalWrap from 'conditional-wrap';
 import { motion } from "framer-motion";
+import { setupWheelGestures } from 'embla-carousel-wheel-gestures'
 
 const slideIn = {
   initial: { x: "30%" },
@@ -28,12 +29,10 @@ const Carousel = ({ slides, teaser }) => {
     clickAllowed: false
   });
 
-  useEffect(() => {
-    if (!embla) return;
-  }, [embla]);
+  useEffect(() => embla && setupWheelGestures(embla), [embla])
 
   return (
-      <div className="embla">
+      <div className="embla will-change">
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">
             {slides.map((item, index) => (
@@ -76,7 +75,7 @@ const Carousel = ({ slides, teaser }) => {
                         <span className="text-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
                       </motion.div>
                     )}
-              </ConditionalWrap>
+                </ConditionalWrap>
               </div>
             ))}
           </div>
