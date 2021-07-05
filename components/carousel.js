@@ -24,7 +24,8 @@ const Carousel = ({ slides, teaser }) => {
     dragFree: true,
     loop: true,
     align: 'center',
-    containScroll: "trimSnaps"
+    containScroll: "trimSnaps",
+    clickAllowed: false
   });
 
   useEffect(() => {
