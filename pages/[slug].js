@@ -47,7 +47,7 @@ export default function ClientSlug(initialData) {
             
             <Header />
 
-            <m.div variants={fade} className="px-[25px] md:px-[35px] xl:px-[65px] w-full">
+            <m.div variants={fade} className="px-[25px] md:px-[35px] 2xl:px-[65px] w-full">
               <h1 className="uppercase text-[28px] md:text-[32px] leading-none">{title}</h1>
             </m.div>
 
@@ -57,7 +57,7 @@ export default function ClientSlug(initialData) {
                 {collections.map((item, i) => {
                   return (
                     <div key={i}>
-                      <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center mb-5 px-[25px] md:px-[35px] xl:px-[65px]">
+                      <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center mb-5 px-[25px] md:px-[35px] 2xl:px-[65px]">
                         <div className="w-auto">
                           <span className="block uppercase text-xs md:text-sm text-blue">{item.title}</span>
                         </div>
@@ -82,7 +82,7 @@ export default function ClientSlug(initialData) {
                 })}
               </>
             ) : (
-              <m.span variants={fade} className="block px-[25px] md:px-[35px] xl:px-[65px] text-sm opacity-75">Collection Coming Soon</m.span>
+              <m.span variants={fade} className="block px-[25px] md:px-[35px] 2xl:px-[65px] text-sm opacity-75">Collection Coming Soon</m.span>
             )}
             
 

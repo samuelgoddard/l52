@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="px-[25px] py-[35px] md:px-[35px] md:py-[45px] xl:py-[55px] xl:px-[65px] w-full">
+    <footer className="px-[25px] py-[35px] md:px-[35px] md:py-[45px] 2xl:py-[55px] 2xl:px-[65px] w-full">
       <div className="flex flex-wrap">
         <div className="w-auto">
           <Link href="/">

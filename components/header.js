@@ -4,7 +4,7 @@ import logo from '@/public/images/logo.svg'
 
 export default function Header({ indexActive }) {
   return (
-    <header className="px-[25px] py-[35px] md:px-[35px] md:py-[45px] xl:py-[55px] xl:px-[65px] w-full">
+    <header className="px-[25px] py-[35px] md:px-[35px] md:py-[45px] 2xl:py-[55px] 2xl:px-[65px] w-full">
       <Link href="/">
         <a className="block w-[200px] mb-3 md:mb-2">
           <Image

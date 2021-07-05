@@ -85,12 +85,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
   height: 100%;
 
   @screen md {
-    min-width: 38.5%;
+    min-width: 30.5%;
+    padding-left: 1.5rem;
+  }
+
+  @screen lg {
+    min-width: 29.5%;
     padding-left: 1.5rem;
   }
   
   @screen xl {
-    min-width: 30%;
+    min-width: 26.5%;
   }
 
   @screen 2xl {
@@ -102,11 +107,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
 .embla__slide__inner {
   position: relative;
   overflow: hidden;
-  height: 85%;
+  height: 90%;
   /* max-height: 65vh; */
   
   @screen md {
-    height: 85%;
+    height: 90%;
   }
 }
 
