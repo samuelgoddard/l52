@@ -41,8 +41,8 @@ export default function Home(initialData) {
           
           <Header indexActive />
 
-          <m.div variants={fade} className="w-full flex flex-grow justify-center items-center">
-            <div className="w-full h-full flex items-center">
+          <m.div variants={fade} className="w-full flex flex-grow">
+            <div className="w-full flex flex-grow justify-center items-center">
               <div className="w-full h-full">
                 <Carousel slides={clients} teaser />
               </div>
