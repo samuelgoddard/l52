@@ -7,7 +7,9 @@ import { LazyMotion, domAnimation, m } from 'framer-motion'
 import SanityPageService from '@/services/sanityPageService'
 import { NextSeo } from 'next-seo'
 import Div100vh from 'react-div-100vh'
-import { signIn, signOut, useSession } from "next-auth/client";
+import Image from 'next/image'
+import logo from '@/public/images/logo.svg'
+import { signIn, useSession } from "next-auth/client";
 
 const query = `{
   "clients": *[_type == "client"]{
@@ -31,17 +33,42 @@ export default function Home(initialData) {
   const { data: { clients }  } = pageService.getPreviewHook(initialData)()
   
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <Div100vh>
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full text-center">
+            <p className="text-sm">Loading...</p>
+          </div>
+        </div>
+      </Div100vh>
+    );
   }
 
   return (
     <Layout>
       <NextSeo title="Home" />
       {!session && (
-        <>
-          Not signed in <br />
-          <button onClick={signIn}>Sign in</button>
-        </>
+        <Div100vh>
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-full text-center">
+              <div className="w-[240px] mx-auto mb-4">
+                <Image
+                  src={logo}
+                  alt="L52 Logo"
+                  layout="responsive"
+                  className="w-full"
+                  priority
+                />
+
+                <span className="block uppercase text-xs md:text-sm mt-1">
+                  Digital Showroom
+                </span>
+              </div>
+
+              <button className="text-white px-3 py-2 rounded-md bg-black hover:bg-off-black focus:bg-off-black transition ease-in-out duration-300" onClick={signIn}>Enter Password To Enter</button>
+            </div>
+          </div>
+        </Div100vh>
       )}
 
       {session && (

@@ -164,11 +164,11 @@ class HomeCarousel extends Component {
                   { this.props.teaser ? (
                     <>
                       <span className="text-blue uppercase block mb-px">{item.title}</span>
-                      <span className="text-black uppercase block text-xs opacity-75">{item.teaserSubtitle}</span>
+                      <span className="text-off-black uppercase block text-xs opacity-75">{item.teaserSubtitle}</span>
                     </>
                   ) : (
                     <>
-                      <span className="text-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
+                      <span className="text-off-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
                     </>
                   )}
                 </a>

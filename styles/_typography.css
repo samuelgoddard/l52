@@ -1,5 +1,5 @@
 body {
-  @apply font-sans antialiased text-black bg-white;
+  @apply font-sans antialiased text-off-black bg-white;
 }
 
 /* Content Stylings */
