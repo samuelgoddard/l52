@@ -5,6 +5,14 @@ import wheel from "wheel"
 import ImageWrapper from '@/helpers/image-wrapper';
 import normalizeWheel from "normalize-wheel"
 
+const reveal = {
+	initial: { y: "100%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
+  },
+}
+
 const slideIn = {
   initial: { x: "30%" },
   enter: { 
@@ -13,6 +21,19 @@ const slideIn = {
   },
   exit: {
     x: "-25%",
+    opacity: 0,
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const slideInInner = {
+  initial: { x: "6%" },
+  enter: { 
+    x: "0%",
+    transition: { duration: 1.8, ease: [0.33, 1, 0.68, 1] }
+  },
+  exit: {
+    x: "-10%",
     opacity: 0,
     transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   }
