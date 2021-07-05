@@ -4,7 +4,7 @@ module.exports = {
   darkMode: false,
   theme: {
     fontFamily: {
-      'sans': ['Raglan Sans', 'Arial', 'sans-serif'],
+      'sans': ['Circular', 'Arial', 'sans-serif'],
       'mono': ['Space Mono', 'Arial', 'sans-serif'],
     },
     screens: {
@@ -17,13 +17,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        'black': '#000',
-        'white': '#FFF',
-        color: {
-          light: '#ffb288',
-          default: '#d18d67',
-          dark: '#ce8860',
-        },
+        'black': '#494949',
+        'white': '#FFFFFF',
+        'blue': '#00206e',
       }
     },
   },
