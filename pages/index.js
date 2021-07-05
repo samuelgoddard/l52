@@ -8,8 +8,9 @@ import SanityPageService from '@/services/sanityPageService'
 import { NextSeo } from 'next-seo'
 import Div100vh from 'react-div-100vh'
 import Image from 'next/image'
-import logo from '@/public/images/logo.svg'
-import { signIn, useSession } from "next-auth/client";
+import logo from '@/public/images/logo-white.svg'
+import login from '@/public/images/login.webp'
+import { useSession } from "next-auth/client";
 
 const query = `{
   "clients": *[_type == "client"]{
@@ -50,8 +51,19 @@ export default function Home(initialData) {
       {!session && (
         <Div100vh>
           <div className="w-full h-full flex items-center justify-center">
-            <div className="w-full text-center">
-              <div className="w-[240px] mx-auto mb-4">
+
+            <div className="absolute inset-0 z-0 bg-blue">
+              <Image
+                src={login}
+                alt="L52 Login Splash"
+                layout="fill"
+                className="w-full object-cover object-center mix-blend-overlay"
+                priority
+              />
+            </div>
+
+            <div className="w-full text-center text-white relative z-10">
+              <div className="w-[280px] mx-auto mb-6">
                 <Image
                   src={logo}
                   alt="L52 Logo"
@@ -60,12 +72,12 @@ export default function Home(initialData) {
                   priority
                 />
 
-                <span className="block uppercase text-xs md:text-sm mt-1">
+                <span className="block uppercase text-xs md:text-sm mt-2">
                   Digital Showroom
                 </span>
               </div>
 
-              <button className="text-white px-3 py-2 rounded-md bg-black hover:bg-off-black focus:bg-off-black transition ease-in-out duration-300" onClick={signIn}>Enter Password To Enter</button>
+              <a href={'/auth/signin'} className="text-black px-4 py-3 rounded-md bg-white hover:opacity-75 focus:opacity-75 transition ease-in-out duration-300 text-sm uppercase">Enter Password</a>
             </div>
           </div>
         </Div100vh>

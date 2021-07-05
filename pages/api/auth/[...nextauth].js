@@ -7,6 +7,7 @@ const isCorrectCredentials = (credentials) =>
 
 const options = {
   // Configure one or more authentication providers
+  pages: { signin: '/auth/signin'},
   providers: [
     Providers.Credentials({
       // The name to display on the sign in form (e.g. 'Sign in with...')
