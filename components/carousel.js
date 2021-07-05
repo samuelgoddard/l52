@@ -33,9 +33,9 @@ const Carousel = ({ slides, teaser }) => {
                 </Link>
               )}
             >
-              <div className="embla__slide bg-gray-100">
+              <div className="embla__slide">
                 <div className="embla__slide__inner mb-2">
-                  <div className="embla__slide__img">
+                  <div className="embla__slide__img bg-gray-100">
                     <div className="group-hover:scale-110 transition ease-in-out duration-500">
                       <ImageWrapper
                         className="w-full h-full object-cover object-center"
