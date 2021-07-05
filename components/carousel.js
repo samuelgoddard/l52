@@ -4,6 +4,20 @@ import ImageWrapper from '@/helpers/image-wrapper'
 import { useEmblaCarousel } from "embla-carousel/react";
 import Link from "next/link";
 import ConditionalWrap from 'conditional-wrap';
+import { motion } from "framer-motion";
+
+const slideIn = {
+  initial: { x: "30%" },
+  enter: { 
+    x: "0%",
+    transition: { duration: 1.1, ease: [0.33, 1, 0.68, 1] }
+  },
+  exit: {
+    x: "-25%",
+    opacity: 0,
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+  }
+}
 
 const Carousel = ({ slides, teaser }) => {
   const [viewportRef, embla] = useEmblaCarousel({
@@ -18,54 +32,56 @@ const Carousel = ({ slides, teaser }) => {
   }, [embla]);
 
   return (
-    <div className="embla">
-      <div className="embla__viewport" ref={viewportRef}>
-        <div className="embla__container">
-          {slides.map((item, index) => (
-            <ConditionalWrap
-              condition={!!teaser}
-              key={index}
-              wrap={children => (
-                <Link href={`/${item.slug.current}`}>
-                  <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group block">
-                    {children}
-                  </a>
-                </Link>
-              )}
-            >
-              <div className="embla__slide">
-                <div className="embla__slide__inner mb-2">
-                  <div className="embla__slide__img bg-gray-100">
-                    <div className="group-hover:scale-110 transition ease-in-out duration-500">
-                      <ImageWrapper
-                        className="w-full h-full object-cover object-center"
-                        image={teaser ? item.teaserImage.asset : item.asset}
-                        alt="L52 Logo"
-                        baseWidth={550}
-                        baseHeight={900}
-                        fill={true}
-                        priority
-                      />
-                    </div>
-                  </div>
-                </div>
-                
-                { teaser ? (
-                  <>
-                    <span className="text-blue uppercase block mb-px">{item.title}</span>
-                    <span className="text-black uppercase block text-xs opacity-75">{item.teaserSubtitle}</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="text-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
-                  </>
+      <div className="embla">
+        <div className="embla__viewport" ref={viewportRef}>
+          <div className="embla__container">
+            {slides.map((item, index) => (
+              <ConditionalWrap
+                condition={!!teaser}
+                key={index}
+                wrap={children => (
+                  <Link href={`/${item.slug.current}`}>
+                    <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group block">
+                      {children}
+                    </a>
+                  </Link>
                 )}
-              </div>
-            </ConditionalWrap>
-          ))}
+              >
+                <div className="embla__slide">
+                  <motion.div variants={slideIn} className="embla__slide__inner">
+                    <div className="embla__slide__inner mb-2">
+                      <div className="embla__slide__img bg-gray-100">
+                        <div className="group-hover:scale-110 transition ease-in-out duration-500">
+                          <ImageWrapper
+                            className="w-full h-full object-cover object-center"
+                            image={teaser ? item.teaserImage.asset : item.asset}
+                            alt="L52 Logo"
+                            baseWidth={550}
+                            baseHeight={900}
+                            fill={true}
+                            priority
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    { teaser ? (
+                      <>
+                        <span className="text-blue uppercase block mb-px">{item.title}</span>
+                        <span className="text-black uppercase block text-xs opacity-75">{item.teaserSubtitle}</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-black uppercase block text-xs md:text-sm opacity-75">{index + 1}/{slides.length}</span>
+                      </>
+                    )}
+                  </motion.div>
+                </div>
+              </ConditionalWrap>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
