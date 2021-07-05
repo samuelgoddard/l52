@@ -6,7 +6,7 @@ import Carousel from '@/components/carousel'
 import { fade } from "@/helpers/transitions"
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import SanityPageService from '@/services/SanityPageService'
+import SanityPageService from '@/services/sanityPageService'
 import SmoothScroll from '@/components/smooth-scroll'
 
 const query = `*[_type == "client" && slug.current == $slug][0]{

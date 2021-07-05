@@ -6,10 +6,10 @@ export default class SanityPageService {
   constructor(query) {
     this.query = query || this.query
   }
-
   
-  getPreviewHook(initialData = {}) {
+  getPreviewHook(initialData = {}, params = {}) {
     const subscription = { initialData, enabled: initialData.preview, params: {} }
+    subscription.params = params
     if (initialData.slug?.length > 0) subscription.params.slug = initialData.slug
     return () => sanity.usePreviewSubscription(this.query, subscription)
   }

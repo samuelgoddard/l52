@@ -4,7 +4,7 @@ import Footer from '@/components/footer'
 import Carousel from '@/components/carousel'
 import { fade } from "@/helpers/transitions"
 import { LazyMotion, domAnimation, m } from 'framer-motion'
-import SanityPageService from '@/services/SanityPageService'
+import SanityPageService from '@/services/sanityPageService'
 import { NextSeo } from 'next-seo'
 
 const query = `{
