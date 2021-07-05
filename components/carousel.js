@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import Image from 'next/image'
 import ImageWrapper from '@/helpers/image-wrapper'
 import { useEmblaCarousel } from "embla-carousel/react";
@@ -25,8 +25,7 @@ const Carousel = ({ slides, teaser }) => {
     dragFree: true,
     loop: true,
     align: 'center',
-    containScroll: "trimSnaps",
-    clickAllowed: false
+    containScroll: "trimSnaps"
   });
 
   useEffect(() => embla && setupWheelGestures(embla), [embla])
@@ -42,7 +41,7 @@ const Carousel = ({ slides, teaser }) => {
                   key={index}
                   wrap={children => (
                     <Link href={`/${item.slug.current}`}>
-                      <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group block">
+                      <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group">
                         {children}
                       </a>
                     </Link>
