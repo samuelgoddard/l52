@@ -47,7 +47,6 @@ const Carousel = ({ slides, teaser }) => {
                     </Link>
                   )}
                 >
-                
                     <motion.div variants={slideIn} className="embla__slide__inner mb-2">
                       <div className="embla__slide__img bg-gray-100">
                         <div className="group-hover:scale-110 transition ease-in-out duration-500">
@@ -55,8 +54,8 @@ const Carousel = ({ slides, teaser }) => {
                             className="w-full h-full object-cover object-top"
                             image={teaser ? item.teaserImage.asset : item.asset}
                             alt="L52 Logo"
-                            baseWidth={550}
-                            baseHeight={900}
+                            baseWidth={1000}
+                            baseHeight={1800}
                             fill={true}
                             priority
                           />
