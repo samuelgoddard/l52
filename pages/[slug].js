@@ -97,7 +97,7 @@ export default function ClientSlug(initialData) {
               <Header />
 
               <m.div variants={fade} className="px-[25px] md:px-[35px] 2xl:px-[65px] w-full">
-                <h1 className="uppercase text-[28px] md:text-[32px] leading-none">{title}</h1>
+                <h1 className="uppercase text-[28px] md:text-[32px] leading-none mt-[1.5rem] mb-[0.5rem]">{title}</h1>
               </m.div>
 
 
