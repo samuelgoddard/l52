@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/public/images/logo.svg'
+import FancyLinkInternal from './fancyLinkInternal'
 
 export default function Header({ indexActive }) {
   return (
@@ -25,11 +26,13 @@ export default function Header({ indexActive }) {
         </div>
 
         <div className="ml-auto flex items-center">
-          <Link href="/">
+          {/* <Link href="/">
             <a aria-label="Navigate to about page" className={`block md:inline-block uppercase hover:opacity-75 focus:opacity-75 text-xs md:text-sm transition ease-in-out duration-300 ${indexActive ? 'border-b border-black' : 'border-b border-white'}`}>
               Brands
             </a>
-          </Link>
+          </Link> */}
+
+          <FancyLinkInternal destination={`/`} label="Brands" fast active={indexActive} />
         </div>
       </div>
     </header>

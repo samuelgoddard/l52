@@ -24,7 +24,7 @@ const Carousel = ({ slides, teaser }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     dragFree: true,
     loop: true,
-    align: 'center',
+    align: 0.0215,
     containScroll: "trimSnaps"
   });
 
@@ -48,17 +48,32 @@ const Carousel = ({ slides, teaser }) => {
                   )}
                 >
                     <motion.div variants={slideIn} className="embla__slide__inner mb-2">
-                      <div className="embla__slide__img bg-gray-100">
-                        <div className="group-hover:scale-110 transition ease-in-out duration-500">
-                          <ImageWrapper
-                            className="w-full h-full object-cover object-top"
-                            image={teaser ? item.teaserImage.asset : item.asset}
-                            alt="L52 Logo"
-                            baseWidth={1000}
-                            baseHeight={1800}
-                            fill={true}
-                            priority
-                          />
+                      <div className="embla__slide__img">
+                        <div className="overflow-hiddeb">
+                          <div className="normal-image transition ease-in-out duration-500 opacity-100 group-hover:opacity-100 group-focus:opacity-100">
+                            <ImageWrapper
+                              className="w-full h-full object-cover object-top"
+                              image={teaser ? item.teaserImage.asset : item.asset}
+                              alt="L52 Logo"
+                              baseWidth={1000}
+                              baseHeight={1800}
+                              fill={true}
+                              priority
+                            />
+                          </div>
+                          {teaser && (
+                            <div className="overflow-image absolute inset-0 w-full h-full bg-blue transition ease-in-out duration-500 opacity-0 group-hover:opacity-75 group-focus:opacity-75 scale-105">
+                              <ImageWrapper
+                                className="w-full h-full object-cover object-top"
+                                image={teaser ? item.teaserImage.asset : item.asset}
+                                alt="L52 Logo"
+                                baseWidth={1000}
+                                baseHeight={1800}
+                                fill={true}
+                                priority
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
                     </motion.div>

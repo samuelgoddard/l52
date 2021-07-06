@@ -8,6 +8,7 @@ import { NextSeo } from 'next-seo'
 import SanityPageService from '@/services/sanityPageService'
 import Div100vh from 'react-div-100vh'
 import ConditionalWrap from 'conditional-wrap';
+import FancyLink from '@/components/fancyLink';
 import { signIn, useSession } from "next-auth/client";
 
 const query = `*[_type == "client" && slug.current == $slug][0]{
@@ -111,9 +112,21 @@ export default function ClientSlug(initialData) {
                           </div>
                           <div className="ml-auto hidden md:block">
                             <div className="md:flex md:items-center text-right">
-                              <span className="block uppercase text-xs md:text-sm md:ml-6">Enquire</span>
-                              <span className="block uppercase text-xs md:text-sm md:ml-6">Download Images</span>
-                              <span className="block uppercase text-xs md:text-sm md:ml-6">Download Lookbook</span>
+                              { item.enquireEmailAddress && (
+                                <div className="md:ml-6">
+                                  <FancyLink fast destination={`mailto:${item.enquireEmailAddress}`} label="Enquire" />
+                                </div>
+                              )}
+                              { item.imagesGoogleDrive && (
+                                <div className="md:ml-6">
+                                  <FancyLink destination={item.imagesGoogleDrive} label="Download Images" />
+                                </div>
+                              )}
+                              { item.lookbookPdf && (
+                                <div className="md:ml-6">
+                                  <FancyLink destination={item.lookbookPdf.asset.url} label="Download Lookbook" />
+                                </div>
+                              )}
                             </div>
                           </div>
                         </m.div>
