@@ -98,19 +98,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
   }
 }
 
-.normal-image {
-  & img {
-    transform: scale(1.01);
-  }
-}
 .overflow-image {
-  & img {
-    transform: scale(1.01);
-  }
-
-  & > div {
-    @apply mix-blend-overlay;
-  }
+  transform: scale(0.999)
 }
 
 .embla__slide__inner {

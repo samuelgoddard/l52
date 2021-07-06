@@ -62,8 +62,8 @@ const Carousel = ({ slides, teaser }) => {
                             />
                           </div>
                           {teaser && (
-                            <div className="overflow-image absolute inset-0 w-full h-full bg-blue transition ease-in-out duration-500 opacity-0 group-hover:opacity-75 group-focus:opacity-75 scale-105">
-                              <ImageWrapper
+                            <div className="overflow-image absolute inset-0 w-full h-full bg-blue transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 bg-blend-hue mix-blend-hue">
+                              {/* <ImageWrapper
                                 className="w-full h-full object-cover object-top"
                                 image={teaser ? item.teaserImage.asset : item.asset}
                                 alt="L52 Logo"
@@ -71,7 +71,7 @@ const Carousel = ({ slides, teaser }) => {
                                 baseHeight={1800}
                                 fill={true}
                                 priority
-                              />
+                              /> */}
                             </div>
                           )}
                         </div>
