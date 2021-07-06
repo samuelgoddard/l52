@@ -9,7 +9,9 @@ import SanityPageService from '@/services/sanityPageService'
 import Div100vh from 'react-div-100vh'
 import ConditionalWrap from 'conditional-wrap';
 import FancyLink from '@/components/fancyLink';
-import { signIn, useSession } from "next-auth/client";
+import Image from 'next/image'
+import login from '@/public/images/login.webp'
+import { useSession } from "next-auth/client";
 
 const query = `*[_type == "client" && slug.current == $slug][0]{
 	title,
@@ -55,23 +57,37 @@ export default function ClientSlug(initialData) {
 
       {!session && (
         <Div100vh>
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="w-full text-center">
-              <div className="w-[240px] mx-auto mb-4">
-                <Image
-                  src={logo}
-                  alt="L52 Logo"
-                  layout="responsive"
-                  className="w-full"
-                  priority
-                />
+          <div className="w-full h-full flex items-center justify-center relative">
 
-                <span className="block uppercase text-xs md:text-sm mt-1">
-                  Digital Showroom
-                </span>
-              </div>
+            <div className="absolute inset-0 z-0 bg-blue">
+              <Image
+                src={login}
+                alt="L52 Login Splash"
+                layout="fill"
+                className="w-full object-cover object-center mix-blend-overlay"
+                priority
+              />
+            </div>
 
-              <button className="text-white px-3 py-2 rounded-md bg-black hover:bg-off-black focus:bg-off-black transition ease-in-out duration-300" onClick={signIn}>Enter Password To Enter</button>
+            <span className="absolute top-0 left-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mt-[50px] md:mt-[75px] font-light ml-[35px] md:ml-[50px] text-white">
+              L52
+            </span>
+
+            <span className="absolute top-0 right-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mt-[50px] md:mt-[75px] font-light mr-[35px] md:mr-[50px] text-right text-white">
+              Communications
+            </span>
+
+            <span className="absolute bottom-0 left-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mb-[50px] md:mb-[75px] font-light ml-[35px] md:ml-[50px] text-white">
+              Digital
+            </span>
+
+            <span className="absolute bottom-0 right-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mb-[50px] md:mb-[75px] font-light mr-[35px] md:mr-[50px] text-right text-white">
+              Showroom
+            </span>
+
+            <div className="w-full text-center text-white relative z-10">
+
+              <a href={'/auth/signin'} className="text-white px-5 md:px-6 py-3 md:py-4 uppercase border md:text-lg border-[#f7ff00] hover:border-white focus:border-white transition ease-in-out duration-300">Sign in</a>
             </div>
           </div>
         </Div100vh>

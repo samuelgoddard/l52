@@ -5,3 +5,12 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Circular';
+  src: url('../public/fonts/CircularStd-Light.woff2') format('woff2'),
+      url('../public/fonts/CircularStd-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
