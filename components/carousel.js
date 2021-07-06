@@ -49,7 +49,7 @@ const Carousel = ({ slides, teaser }) => {
                 >
                     <motion.div variants={slideIn} className="embla__slide__inner mb-2">
                       <div className="embla__slide__img">
-                        <div className="overflow-hiddeb">
+                        <div className="overflow-hidden">
                           <div className="normal-image transition ease-in-out duration-500 opacity-100 group-hover:opacity-100 group-focus:opacity-100">
                             <ImageWrapper
                               className="w-full h-full object-cover object-top"
