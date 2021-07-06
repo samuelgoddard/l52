@@ -122,7 +122,7 @@ export default function ClientSlug(initialData) {
                   {collections.map((item, i) => {
                     return (
                       <div key={i}>
-                        <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center mb-5 px-[25px] md:px-[35px] 2xl:px-[65px]">
+                        <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center px-[25px] md:px-[35px] 2xl:px-[65px] mb-[1rem]">
                           <div className="w-auto">
                             <span className="block uppercase text-xs md:text-sm text-blue">{item.title}</span>
                           </div>
