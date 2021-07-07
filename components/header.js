@@ -5,7 +5,7 @@ import FancyLinkInternal from './fancyLinkInternal'
 
 export default function Header({ indexActive }) {
   return (
-    <header className="px-[25px] py-[35px] md:px-[35px] md:py-[45px] 2xl:py-[55px] 2xl:px-[65px] w-full relative z-10">
+    <header className="px-[25px] py-[30px] md:px-[35px] md:py-[30px] 2xl:py-[55px] 2xl:px-[65px] w-full relative z-10">
       <Link href="/">
         <a className="block w-[200px] mb-3 md:mb-2">
           <Image
