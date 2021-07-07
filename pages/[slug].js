@@ -41,6 +41,27 @@ export default function ClientSlug(initialData) {
 
   if (loading) {
     return (
+      <>
+      <NextSeo
+        title="DIGITAL SHOWROOM | L52 COMMUNICATIONS"
+        openGraph={{
+          url: 'https://l52.vercel.app',
+          title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
+          images: [
+            {
+              url: 'https://l52.vercel.app/static/social.jpeg',
+              width: 1200,
+              height: 630,
+              alt: 'L52 Logo',
+            },
+          ],
+          site_name: 'L52',
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+      />
+      
       <Div100vh>
         <div className="w-full h-full flex items-center justify-center">
           <div className="w-full text-center">
@@ -48,6 +69,7 @@ export default function ClientSlug(initialData) {
           </div>
         </div>
       </Div100vh>
+      </>
     );
   }
 
