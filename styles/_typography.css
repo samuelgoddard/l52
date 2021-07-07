@@ -98,7 +98,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
   }
 
   @media screen and (min-width: 800px) and (max-width: 1200px) {
-      min-width: 22.5%;
+      min-width: 25%;
   }
 }
 
@@ -114,6 +114,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
   
   @screen md {
     height: 86%;
+  }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) { 
+    height: 84%;
   }
 }
 
