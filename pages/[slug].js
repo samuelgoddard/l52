@@ -60,7 +60,7 @@ export default function ClientSlug(initialData) {
           title: `${title.toUpperCase()} | L52 COMMUNICATIONS`,
           images: [
             {
-              url: 'https://l52.vercel.app/static/social.jpg',
+              url: 'https://l52.vercel.app/static/social.jpeg',
               width: 1200,
               height: 630,
               alt: 'L52 Logo',
