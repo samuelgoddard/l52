@@ -13,7 +13,7 @@ import login from '@/public/images/login.webp'
 import { useSession } from "next-auth/client";
 
 const query = `{
-  "clients": *[_type == "client"]{
+  "clients": *[_type == "client"] | order(title asc){
     title,
     teaserSubtitle,
     teaserImage{
@@ -47,7 +47,26 @@ export default function Home(initialData) {
 
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo
+        title="DIGITAL SHOWROOM"
+        openGraph={{
+          url: 'https://l52.vercel.app',
+          title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
+          images: [
+            {
+              url: 'https://l52.vercel.app/static/social.jpg',
+              width: 1200,
+              height: 630,
+              alt: 'L52 Logo',
+            },
+          ],
+          site_name: 'L52',
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+      />
+
       {!session && (
         <Div100vh>
           <div className="w-full h-full flex items-center justify-center relative">

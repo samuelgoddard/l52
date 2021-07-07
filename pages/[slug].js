@@ -53,13 +53,31 @@ export default function ClientSlug(initialData) {
 
   return (
     <Layout>
-      <NextSeo title={title} />
+      <NextSeo
+        title={title.toUpperCase()}
+        openGraph={{
+          url: 'https://l52.vercel.app',
+          title: `${title.toUpperCase()} | L52 COMMUNICATIONS`,
+          images: [
+            {
+              url: 'https://l52.vercel.app/static/social.jpg',
+              width: 1200,
+              height: 630,
+              alt: 'L52 Logo',
+            },
+          ],
+          site_name: 'L52',
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+      />
 
       {!session && (
         <Div100vh>
           <div className="w-full h-full flex items-center justify-center relative">
 
-            <div className="absolute inset-0 z-0 bg-blue">
+            <div className="absolute inset-0 z-0">
               <Image
                 src={login}
                 alt="L52 Login Splash"
