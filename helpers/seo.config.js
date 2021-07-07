@@ -1,6 +1,5 @@
 export default {
-  defaultTitle: 'DIGITAL SHOWROOM',
-  titleTemplate: '%s | L52 COMMUNICATIONS',
+  defaultTitle: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
   openGraph: {
     type: 'website',
     locale: 'en_GB',

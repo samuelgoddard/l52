@@ -54,7 +54,7 @@ export default function ClientSlug(initialData) {
   return (
     <Layout>
       <NextSeo
-        title={title.toUpperCase()}
+        title={`${title.toUpperCase()} | | L52 COMMUNICATIONS`}
         openGraph={{
           url: 'https://l52.vercel.app',
           title: `${title.toUpperCase()} | L52 COMMUNICATIONS`,

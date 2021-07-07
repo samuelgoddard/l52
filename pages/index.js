@@ -48,7 +48,7 @@ export default function Home(initialData) {
   return (
     <Layout>
       <NextSeo
-        title="DIGITAL SHOWROOM"
+        title="DIGITAL SHOWROOM | L52 COMMUNICATIONS"
         openGraph={{
           url: 'https://l52.vercel.app',
           title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
