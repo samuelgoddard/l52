@@ -96,6 +96,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
     min-width: 25.5%;
     padding-left: 2rem;
   }
+
+  @media screen and (min-width: 800px) and (max-width: 1200px) {
+      min-width: 22.5%;
+  }
 }
 
 .overflow-image {
