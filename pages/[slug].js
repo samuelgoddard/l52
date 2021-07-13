@@ -10,6 +10,7 @@ import Div100vh from 'react-div-100vh'
 import ConditionalWrap from 'conditional-wrap';
 import FancyLink from '@/components/fancyLink';
 import Image from 'next/image'
+import logo from '@/public/images/logo-white.svg'
 import login from '@/public/images/login.webp'
 import { useSession } from "next-auth/client";
 
@@ -97,19 +98,8 @@ export default function ClientSlug(initialData) {
 
       {!session && (
         <Div100vh>
-          <div className="w-full h-full flex items-center justify-center relative">
-
-            <div className="absolute inset-0 z-0">
-              <Image
-                src={login}
-                alt="L52 Login Splash"
-                layout="fill"
-                className="w-full object-cover object-center mix-blend-overlay"
-                priority
-              />
-            </div>
-
-            <span className="absolute top-0 left-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mt-[50px] md:mt-[75px] font-light ml-[35px] md:ml-[50px] text-white">
+          <div className="w-full h-full flex items-center justify-center relative bg-[#181818]">
+            {/* <span className="absolute top-0 left-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mt-[50px] md:mt-[75px] font-light ml-[35px] md:ml-[50px] text-white">
               L52
             </span>
 
@@ -123,11 +113,26 @@ export default function ClientSlug(initialData) {
 
             <span className="absolute bottom-0 right-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mb-[50px] md:mb-[75px] font-light mr-[35px] md:mr-[50px] text-right text-white">
               Showroom
-            </span>
+            </span> */}
 
             <div className="w-full text-center text-white relative z-10">
+              <div className="flex justify-center mb-2">
+                <div className="w-[300px]">
+                  <Image
+                    src={logo}
+                    alt="L52 Logo"
+                    layout="responsive"
+                    className="w-full"
+                    priority
+                  />
+                </div>
+              </div>
 
-              <a href={'/auth/signin'} className="text-white px-5 md:px-6 py-3 md:py-4 uppercase border md:text-lg border-[#f7ff00] hover:border-white focus:border-white transition ease-in-out duration-300">Sign in</a>
+              <span className="block uppercase text-xs md:text-sm mb-12">
+                Digital Showroom
+              </span>
+
+              <a href={'/auth/signin'} className="text-white px-8 md:px-12 py-2 md:py-2 uppercase border border-white hover:border-white focus:border-white transition ease-in-out duration-300 text-base hover:bg-white focus:bg-white hover:text-black focus:text-black">Sign in</a>
             </div>
           </div>
         </Div100vh>
@@ -153,7 +158,7 @@ export default function ClientSlug(initialData) {
               <Header />
 
               <m.div variants={fade} className="px-[25px] md:px-[35px] 2xl:px-[65px] w-full">
-                <h1 className="uppercase text-[28px] md:text-[32px] leading-none mt-[1.5rem] mb-[0.5rem]">{title}</h1>
+                <h1 className="uppercase text-[28px] md:text-[32px] leading-none mt-[1.5rem] mb-[0.5rem] text-black">{title}</h1>
               </m.div>
 
 

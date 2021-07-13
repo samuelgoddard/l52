@@ -1,24 +1,15 @@
 import Div100vh from 'react-div-100vh'
 import Image from 'next/image'
 import login from '@/public/images/login.webp'
+import logo from '@/public/images/logo-white.svg'
 import { getCsrfToken } from 'next-auth/client'
 
 export default function SignIn({ csrfToken }) {
   return (
+
     <Div100vh>
-      <div className="w-full h-full flex items-center justify-center relative">
-
-        <div className="absolute inset-0 z-0 bg-blue">
-          <Image
-            src={login}
-            alt="L52 Login Splash"
-            layout="fill"
-            className="w-full object-cover object-center mix-blend-overlay"
-            priority
-          />
-        </div>
-
-        <span className="absolute top-0 left-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mt-[50px] md:mt-[75px] font-light ml-[35px] md:ml-[50px] text-white">
+      <div className="w-full h-full flex items-center justify-center relative bg-[#181818]">
+        {/* <span className="absolute top-0 left-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mt-[50px] md:mt-[75px] font-light ml-[35px] md:ml-[50px] text-white">
           L52
         </span>
 
@@ -32,25 +23,47 @@ export default function SignIn({ csrfToken }) {
 
         <span className="absolute bottom-0 right-0 uppercase text-xs text-[20px] md:text-[42px] xl:text-[64px] mb-[50px] md:mb-[75px] font-light mr-[35px] md:mr-[50px] text-right text-white">
           Showroom
-        </span>
+        </span> */}
 
         <div className="w-full text-center text-white relative z-10">
+          <div className="flex justify-center mb-2">
+            <div className="w-[300px]">
+              <Image
+                src={logo}
+                alt="L52 Logo"
+                layout="responsive"
+                className="w-full"
+                priority
+              />
+            </div>
+          </div>
+
+          <span className="block uppercase text-xs md:text-sm mb-12">
+            Digital Showroom
+          </span>
+
+          <div className="w-full text-center text-white relative z-10">
 
           <form method='post' action='/api/auth/callback/credentials'>
             <input name='csrfToken' type='hidden' defaultValue={csrfToken}/>
-            <label className="w-full block max-w-[250px] mx-auto mb-3">
-              <span className="block uppercase text-xs mb-1 sr-only">USERNAME</span>
-              <input name='username' type='text' className="w-full max-w-[200px] mx-auto block text-black px-3 py-3 text-center text-sm" placeholder="USERNAME" />
-            </label>
 
-            <label className="w-full block max-w-[250px] mx-auto mb-5">
-              <span className="block uppercase text-xs mb-1 sr-only">PASSWORD</span>
-              <input name='password' type='password' className="w-full max-w-[200px] mx-auto block text-black px-3 py-3 text-center text-sm" placeholder="PASSWORD" />
-            </label>
-            
+            <div className="max-w-lg mx-auto">
+              <div className="flex flex-wrap md:-mx-2">
+                <label className="w-full block md:w-1/2 mb-3 px-12 md:px-2">
+                  <span className="block uppercase text-xs mb-1 sr-only">USERNAME</span>
+                  <input name='username' type='text' className="w-full mx-auto block text-black px-3 py-3 text-center text-sm" placeholder="USERNAME" />
+                </label>
 
-            <button type='submit' className="text-white px-5 md:px-6 py-3 md:py-4 uppercase border md:text-lg border-[#f7ff00] hover:border-white focus:border-white transition ease-in-out duration-300">Sign in</button>
+                <label className="w-full block md:w-1/2 mb-5 px-12 md:px-2">
+                  <span className="block uppercase text-xs mb-1 sr-only">PASSWORD</span>
+                  <input name='password' type='password' className="w-full mx-auto block text-black px-3 py-3 text-center text-sm" placeholder="PASSWORD" />
+                </label>
+              </div>
+            </div>
+          
+            <button type='submit' className="text-white px-8 md:px-12 py-2 md:py-2 uppercase border border-white hover:border-white focus:border-white transition ease-in-out duration-300 text-base hover:bg-white focus:bg-white hover:text-black focus:text-black">Sign in</button>
           </form>
+        </div>
         </div>
       </div>
     </Div100vh>

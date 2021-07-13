@@ -24,7 +24,7 @@ const Carousel = ({ slides, teaser }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     dragFree: true,
     loop: true,
-    align: 0.0215,
+    align: 0.017,
     containScroll: "trimSnaps"
   });
 
