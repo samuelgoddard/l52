@@ -17,7 +17,11 @@ const query = `*[_type == "client" && slug.current == $slug][0]{
 	title,
   collections[]{
     enquireEmailAddress,
-    imagesGoogleDrive,
+    imagesGoogleDrive {
+      asset->{
+        ...
+      },
+    },
     lookbookPdf {
       asset->{
         ...
@@ -175,7 +179,7 @@ export default function ClientSlug(initialData) {
                               )}
                               { item.imagesGoogleDrive && (
                                 <div className="md:ml-6">
-                                  <FancyLink destination={item.imagesGoogleDrive} label="Download Images" />
+                                  <FancyLink destination={item.imagesGoogleDrive.asset.url } label="Download Images" />
                                 </div>
                               )}
                               { item.lookbookPdf && (
