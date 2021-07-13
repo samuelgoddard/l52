@@ -39,11 +39,11 @@ export default function Home(initialData) {
         <NextSeo
           title="DIGITAL SHOWROOM | L52 COMMUNICATIONS"
           openGraph={{
-            url: 'https://l52.vercel.app',
+            url: 'https://digitalshowroom.l52.world/',
             title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
             images: [
               {
-                url: 'https://l52.vercel.app/static/social.jpeg',
+                url: 'https://digitalshowroom.l52.world/static/social.jpeg',
                 width: 1200,
                 height: 630,
                 alt: 'L52 Logo',
@@ -72,11 +72,11 @@ export default function Home(initialData) {
       <NextSeo
         title="DIGITAL SHOWROOM | L52 COMMUNICATIONS"
         openGraph={{
-          url: 'https://l52.vercel.app',
+          url: 'https://digitalshowroom.l52.world/',
           title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
           images: [
             {
-              url: 'https://l52.vercel.app/static/social.jpeg',
+              url: 'https://digitalshowroom.l52.world/static/social.jpeg',
               width: 1200,
               height: 630,
               alt: 'L52 Logo',

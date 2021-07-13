@@ -1,6 +1,5 @@
 import Div100vh from 'react-div-100vh'
 import Image from 'next/image'
-import logo from '@/public/images/logo-white.svg'
 import login from '@/public/images/login.webp'
 import { getCsrfToken } from 'next-auth/client'
 

@@ -3,7 +3,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://l52.vercel.app/',
+    url: 'https://digitalshowroom.l52.world/',
     site_name: 'SiteName',
   },
   twitter: {
