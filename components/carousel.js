@@ -31,7 +31,7 @@ const Carousel = ({ slides, teaser }) => {
   useEffect(() => embla && setupWheelGestures(embla), [embla])
 
   return (
-      <div className="embla will-change">
+      <div className={`embla will-change ${teaser ? '' : ''}`}>
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">
             {slides.map((item, index) => (
@@ -50,19 +50,18 @@ const Carousel = ({ slides, teaser }) => {
                     <motion.div variants={slideIn} className="embla__slide__inner mb-[1rem]">
                       <div className="embla__slide__img">
                         <div className="overflow-hidden">
-                          <div className="normal-image transition ease-in-out duration-500 opacity-100 group-hover:opacity-100 group-focus:opacity-100">
+                          <div className="normal-image transition ease-in-out duration-500 opacity-100 md:group-hover:opacity-100 md:group-focus:opacity-100">
                             <ImageWrapper
-                              className="w-full h-full object-cover object-center transition ease-in-out duration-500 group-hover:opacity-80"
+                              className="w-full h-full object-cover object-center transition ease-in-out duration-500 md:group-hover:opacity-80"
                               image={teaser ? item.teaserImage.asset : item.asset}
                               alt="L52 Logo"
                               baseWidth={1000}
                               baseHeight={1800}
-                              fill={true}
                               priority
                             />
                           </div>
                           {teaser && (
-                            <div className="overflow-image absolute inset-0 w-full h-full bg-black transition ease-in-out duration-500 opacity-0 group-hover:opacity-100 group-focus:opacity-100 mix-blend-hue">
+                            <div className="overflow-image absolute inset-0 w-full h-full bg-black transition ease-in-out duration-500 opacity-0 md:group-hover:opacity-100 md:group-focus:opacity-100 mix-blend-hue">
                               {/* <ImageWrapper
                                 className="w-full h-full object-cover object-center"
                                 image={teaser ? item.teaserImage.asset : item.asset}

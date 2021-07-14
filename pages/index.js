@@ -43,7 +43,7 @@ export default function Home(initialData) {
             title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
             images: [
               {
-                url: 'https://digitalshowroom.l52.world/static/social.jpeg',
+                url: 'https://digitalshowroom.l52.world/static/social.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'L52 Logo',
@@ -76,7 +76,7 @@ export default function Home(initialData) {
           title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
           images: [
             {
-              url: 'https://digitalshowroom.l52.world/static/social.jpeg',
+              url: 'https://digitalshowroom.l52.world/static/social.jpg',
               width: 1200,
               height: 630,
               alt: 'L52 Logo',

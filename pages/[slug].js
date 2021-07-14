@@ -50,7 +50,7 @@ export default function ClientSlug(initialData) {
           title: 'DIGITAL SHOWROOM | L52 COMMUNICATIONS',
           images: [
             {
-              url: 'https://digitalshowroom.l52.world/static/social.jpeg',
+              url: 'https://digitalshowroom.l52.world/static/social.jpg',
               width: 1200,
               height: 630,
               alt: 'L52 Logo',
@@ -83,7 +83,7 @@ export default function ClientSlug(initialData) {
           title: `${title.toUpperCase()} | L52 COMMUNICATIONS`,
           images: [
             {
-              url: 'https://digitalshowroom.l52.world/static/social.jpeg',
+              url: 'https://digitalshowroom.l52.world/static/social.jpg',
               width: 1200,
               height: 630,
               alt: 'L52 Logo',
@@ -166,7 +166,7 @@ export default function ClientSlug(initialData) {
                 <>
                   {collections.map((item, i) => {
                     return (
-                      <div key={i}>
+                      <div key={i} className="mt-[2rem]">
                         <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center px-[25px] md:px-[35px] 2xl:px-[65px] mb-[1rem]">
                           <div className="w-auto">
                             <span className="block uppercase text-xs md:text-sm text-blue">{item.title}</span>
