@@ -152,7 +152,7 @@ export default function ClientSlug(initialData) {
               initial="initial"
               animate="enter"
               exit="exit"
-              className={`${collections?.length > 1 ? '' : 'flex flex-col h-full' }`}
+              className={`${collections?.length > 1 ? '' : '' }`}
             >
               
               <Header />
@@ -166,8 +166,8 @@ export default function ClientSlug(initialData) {
                 <>
                   {collections.map((item, i) => {
                     return (
-                      <div key={i} className="mt-[2rem]">
-                        <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center px-[25px] md:px-[35px] 2xl:px-[65px] mb-[1rem]">
+                      <div key={i} className="mt-[1rem]">
+                        <m.div variants={fade} div className="w-full flex flex-wrap items-start md:items-center px-[25px] md:px-[35px] 2xl:px-[65px] mb-[3rem]">
                           <div className="w-auto">
                             <span className="block uppercase text-xs md:text-sm text-blue">{item.title}</span>
                           </div>
@@ -192,9 +192,9 @@ export default function ClientSlug(initialData) {
                           </div>
                         </m.div>
             
-                        <m.div variants={fade} className={`w-full ${collections.length > 0 ? 'h-[70vh]' : '' }`}>
-                          <div className="w-full h-full flex items-center">
-                            <div className="w-full h-full">
+                        <m.div variants={fade} className={`w-full ${collections.length > 0 ? '' : '' }`}>
+                          <div className="w-full flex items-center">
+                            <div className="w-full">
                               <Carousel slides={item.collectionImages} />
                             </div>
                           </div>

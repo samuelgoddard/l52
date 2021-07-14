@@ -138,14 +138,14 @@ export default function Home(initialData) {
               initial="initial"
               animate="enter"
               exit="exit"
-              className="flex flex-col h-full"
+              className=""
             >
               
               <Header indexActive />
 
               <m.div variants={fade} className="w-full flex flex-grow">
                 <div className="w-full flex flex-grow justify-center items-center">
-                  <div className="w-full h-full">
+                  <div className="w-full">
                     <Carousel slides={clients} teaser />
                   </div>
                 </div>

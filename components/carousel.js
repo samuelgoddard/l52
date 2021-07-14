@@ -41,7 +41,7 @@ const Carousel = ({ slides, teaser }) => {
                   key={index}
                   wrap={children => (
                     <Link href={`/${item.slug.current}`}>
-                      <a className="embla__slide pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group">
+                      <a className="pl-0 md:pl-0 xl:pl-0 2xl:pl-0 group">
                         {children}
                       </a>
                     </Link>

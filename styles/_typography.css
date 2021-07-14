@@ -77,7 +77,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
   @apply block;
   min-width: 75%;
   padding-left: 1rem;
-  height: auto;
+  height: 100%;
 
   @screen md {
     min-width: 30.5%;
