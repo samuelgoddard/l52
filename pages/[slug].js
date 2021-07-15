@@ -181,7 +181,7 @@ export default function ClientSlug(initialData) {
                               )}
                               { item.imagesGoogleDrive && (
                                 <div className="md:ml-6">
-                                  <FancyLink destination={item.imagesGoogleDrive } label="Download Images" />
+                                  <FancyLink destination={item.imagesGoogleDrive } label="Download Collection" />
                                 </div>
                               )}
                               { item.downloadStillLife && (
