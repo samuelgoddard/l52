@@ -126,6 +126,10 @@ export default function Home(initialData) {
               </span>
 
               <a href={'/auth/signin'} className="text-white px-8 md:px-12 py-2 md:py-2 uppercase border border-white hover:border-white focus:border-white transition ease-in-out duration-300 text-base hover:bg-white focus:bg-white hover:text-black focus:text-black">Sign in</a>
+              
+              <div>
+              <a href="mailto:TalkToUs@L52.co.uk?subject=Digital Showroom Enquiry"  className="text-white py-2 md:py-2 transition ease-in-out duration-300 text-sm mt-3 hover:opacity-50 focus:opacity-50 inline-block">Request Access</a>
+              </div>
             </div>
           </div>
         </Div100vh>
