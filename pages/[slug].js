@@ -39,32 +39,44 @@ const pageService = new SanityPageService(query)
 
 export default function ClientSlug(initialData) {
   const [session, loading] = useSession();
+  
+  const { data: { title, collections }  } = pageService.getPreviewHook(initialData)()
 
   const lookbook = () => {
     ga.event({
-      action: "DownloadLookBook"
+      action: "DownloadLookBook",
+      params : {
+        collection: title
+      }
     })
   }
 
   const stillLife = () => {
     ga.event({
-      action: "DownloadStillLife"
+      action: "DownloadStillLife",
+      params : {
+        collection: title
+      }
     })
   }
 
   const collection = () => {
     ga.event({
-      action: "DownloadCollection"
+      action: "DownloadCollection",
+      params : {
+        collection: title
+      }
     })
   }
 
   const enquire = () => {
     ga.event({
-      action: "Enquire"
+      action: "Enquire",
+      params : {
+        collection: title
+      }
     })
   }
-  
-  const { data: { title, collections }  } = pageService.getPreviewHook(initialData)()
 
   if (loading) {
     return (
