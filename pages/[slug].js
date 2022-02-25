@@ -13,6 +13,7 @@ import Image from 'next/image'
 import logo from '@/public/images/logo-white.svg'
 import login from '@/public/images/login.webp'
 import { useSession } from "next-auth/client";
+import * as ga from '@/helpers/gtag'
 
 const query = `*[_type == "client" && slug.current == $slug][0]{
 	title,
@@ -38,6 +39,30 @@ const pageService = new SanityPageService(query)
 
 export default function ClientSlug(initialData) {
   const [session, loading] = useSession();
+
+  const lookbook = () => {
+    ga.event({
+      action: "DownloadLookBook"
+    })
+  }
+
+  const stillLife = () => {
+    ga.event({
+      action: "DownloadStillLife"
+    })
+  }
+
+  const collection = () => {
+    ga.event({
+      action: "DownloadCollection"
+    })
+  }
+
+  const enquire = () => {
+    ga.event({
+      action: "Enquire"
+    })
+  }
   
   const { data: { title, collections }  } = pageService.getPreviewHook(initialData)()
 
@@ -176,24 +201,108 @@ export default function ClientSlug(initialData) {
                             <div className="md:flex md:items-center text-right">
                               { item.enquireEmailAddress && (
                                 <div className="md:ml-6">
-                                  <FancyLink fast destination={`mailto:${item.enquireEmailAddress}`} label="Enquire" />
+                                <a href={`mailto:${item.enquireEmailAddress}`} rel="noopener noreferrer" target="_blank" className="block uppercase text-xs relative md:text-sm group" onClick={() => enquire()}>
+                                    <span className="opacity-100 group-hover:opacity-0 group-focus:opacity-0 transition ease-in-out duration-300">Enquire</span>
+                                    <div className="absolute opacity-0 inset-0 w-full group-hover:opacity-100 group-focus:opacity-100 transition ease-in-out duration-300">
+                                      <div className="relative flex overflow-x-hidden">
+                                        <div className={`whitespace-nowrap animate-marquee`}>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                        </div>
+
+                                        <div className={`absolute top-0 whitespace-nowrap animate-marquee2`}>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                          <span className="mx-1">Enquire</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
                                 </div>
                               )}
                               { item.imagesGoogleDrive && (
                                 <div className="md:ml-6">
-                                  <FancyLink destination={item.imagesGoogleDrive } label="Download Collection" />
+                                <a href={item.imagesGoogleDrive} rel="noopener noreferrer" target="_blank" className="block uppercase text-xs relative md:text-sm group" onClick={() => collection()}>
+                                    <span className="opacity-100 group-hover:opacity-0 group-focus:opacity-0 transition ease-in-out duration-300">Download Collection</span>
+                                    <div className="absolute opacity-0 inset-0 w-full group-hover:opacity-100 group-focus:opacity-100 transition ease-in-out duration-300">
+                                      <div className="relative flex overflow-x-hidden">
+                                        <div className={`whitespace-nowrap animate-marquee`}>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                        </div>
+
+                                        <div className={`absolute top-0 whitespace-nowrap animate-marquee2`}>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                          <span className="mx-1">Download Collection</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
                                 </div>
                               )}
                               { item.downloadStillLife && (
                                 <div className="md:ml-6">
-                                  <FancyLink destination={item.downloadStillLife } label="Download Still Life" />
+                                <a href={item.downloadStillLife} rel="noopener noreferrer" target="_blank" className="block uppercase text-xs relative md:text-sm group" onClick={() => stillLife()}>
+                                    <span className="opacity-100 group-hover:opacity-0 group-focus:opacity-0 transition ease-in-out duration-300">Download Still Life</span>
+                                    <div className="absolute opacity-0 inset-0 w-full group-hover:opacity-100 group-focus:opacity-100 transition ease-in-out duration-300">
+                                      <div className="relative flex overflow-x-hidden">
+                                        <div className={`whitespace-nowrap animate-marquee`}>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                        </div>
+
+                                        <div className={`absolute top-0 whitespace-nowrap animate-marquee2`}>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                          <span className="mx-1">Download Still Life</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </a>
                                 </div>
                               )}
                               { item.lookbookPdf && (
                                 <div className="md:ml-6">
-                                  <FancyLink destination={item.lookbookPdf.asset.url} label="Download Lookbook" />
-                                </div>
-                              )}
+                                  <a href={item.lookbookPdf.asset.url} rel="noopener noreferrer" target="_blank" className="block uppercase text-xs relative md:text-sm group" onClick={() => lookbook()}>
+                                      <span className="opacity-100 group-hover:opacity-0 group-focus:opacity-0 transition ease-in-out duration-300">Download Lookbook</span>
+                                      <div className="absolute opacity-0 inset-0 w-full group-hover:opacity-100 group-focus:opacity-100 transition ease-in-out duration-300">
+                                        <div className="relative flex overflow-x-hidden">
+                                          <div className={`whitespace-nowrap animate-marquee`}>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                          </div>
+
+                                          <div className={`absolute top-0 whitespace-nowrap animate-marquee2`}>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                            <span className="mx-1">Download Lookbook</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                )}
                             </div>
                           </div>
                         </m.div>

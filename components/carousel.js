@@ -35,7 +35,7 @@ const Carousel = ({ slides, teaser }) => {
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">
             {slides.map((item, index) => (
-              <div className="embla__slide">
+              <div className="embla__slide" key={index}>
                 <ConditionalWrap
                   condition={!!teaser}
                   key={index}

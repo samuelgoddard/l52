@@ -4,10 +4,22 @@ import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import SEO from '@/helpers/seo.config';
 import { Provider } from "next-auth/client";
-
+import * as gtag from '@/helpers/gtag'
+import { useEffect } from 'react';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+      console.log(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
     <>
